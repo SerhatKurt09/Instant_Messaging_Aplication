@@ -1,0 +1,50 @@
+  <nav class="navbar">  
+    <div class="subnav" id="trapezoid-giris">
+      <button class="subnavbtn">Giriş<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <div class="subnav-trapezoid">
+          <a href="/">Anasayfa</a>
+          <a href="/about">Hakkımızda</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="subnav" id="trapezoid-iletisim">
+      <button class="subnavbtn">İletişim<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <div class="subnav-trapezoid">
+          <a href="/login">Giriş Yap</a>
+          <a href="/signup">Kayıt Ol</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+      <script>
+        $('.expandHome').mouseover(function() {
+      $('.sub-home').css({
+            'display': 'block'
+        }); 
+    });
+    $('.subnavbtn').mouseover(function() {
+      $('.sub-home').css({
+            'display': 'none'
+        }); 
+    });
+
+    $('#trapezoid').mouseleave(function() {
+      $('#trapezoid').css({
+            'margin-top': '-53px'
+        }); 
+        $('.sub-home').css({
+            'display': 'none'
+        }); 
+    }).mouseenter(function() {
+      $('#trapezoid').css({
+            'margin-top': '0px'
+        }); 
+    });
+      </script>

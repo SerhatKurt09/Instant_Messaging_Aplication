@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('./inc/head') %>
+  </head>
+  <body>
+    <%- include('./inc/guvenlinav') %>
+    <h1>Yazilar</h1>
+    <ul>
+           <% mesaj.forEach(mesaj => { %>
+        <li>
+          <a href="/mesajlar/<%= mesaj._id %>"><%= mesaj.title %></a>
+          <p><%= mesaj.short %></p>
+        </li>
+      <% }); %>      
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+
+<div class="card-body contacts_body">
+    <ul class="contacts"><% users.forEach(user => { %>
+    <li class="active">
+        <div class="d-flex bd-highlight">
+            <div class="img_cont">
+                
+                    <img src="https://pbs.twimg.com/media/BtFUrp6CEAEmsml.jpg" alt="mesaj" class="rounded-circle user_img">
+                    <a href="/<%= user.socketId %>" onclick="changeChat('<%- user.kullaniciadi %>')"><%- user.kullaniciadi %></a>
+                        
+            </div>
+
+        </div>
+    </li>
+    </ui> <% }); %>  
+</div> 

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('./inc/head') %>
+  </head>
+  <body>
+      
+    <%- include('./inc/nav') %>
+    <h1>Yazilar</h1>
+    <a href="/admin/ekle">Yeni Yazı</a>
+    <ul>
+      <% mesajlar.forEach(mesaj => { %>
+        <li>
+          <p><%= mesaj.title %></p>
+          <a class="del" data-doc="<%= mesaj._id %>">Sil</a>
+        </li>
+      <% }); %>
+    </ul>
+
+  </body>
+  <script>
+    // Tüm "Sil" linklerini seç
+    const delLinks = document.querySelectorAll('a.del');
+  
+    delLinks.forEach((item, i) => {
+      item.addEventListener('click', (e) => {
+        const endpoint = `/admin/delete/${item.dataset.doc}`; 
+  
+        fetch(endpoint, {
+          method: 'DELETE'
+        })
+        .then((response) => response.json())
+        .then((data) => window.location.href = data.link)
+        .catch((err) => {
+          console.log(err);
+        });
+      });
+    });
+  </script>
+    
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%-include('./inc/head.ejs')%>
+  </head>
+  <body>
+    <%-include('./inc/nav')%>
+
+          <h2>Yeni Mesaj</h2>
+        <form action="" method="post">
+            <div class="inputBox">
+              <input type="text" name="title" required>
+              <i>Başlık</i>
+            </div>
+            <div class="inputBox">
+              <input type="text" name="short" required>
+              <i>Kısa Yazı</i>
+            </div>
+            <div class="inputBox">
+              <input type="text" name="long" required>
+              <i>Uzun Yazı</i>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="ekle">
+            </div>
+          </form>
+  </body>
+</html>
